@@ -1,0 +1,18 @@
+{
+  "sensu": [{
+    "name": "sensu-docker",
+    "host": "sensu",
+    "port": 4568,
+    "user": "sensu",
+    "pass": "sensu",
+    "timeout": 15000
+  }],
+  "uchiwa": {
+    "host": "sensu",
+    "port": 3000,
+    "user": "sensu",
+    "pass": "sensu",
+    "stats": 10,
+    "refresh": 10
+  }
+}

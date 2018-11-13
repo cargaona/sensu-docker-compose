@@ -1,0 +1,10 @@
+{
+  "cliente": {
+    "name":"sensu-client-docker",
+    "address":"sensu-c",
+    "environment": "development",
+    "subscriptions": [
+      "dev"
+    ]
+  }
+}

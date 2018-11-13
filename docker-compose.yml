@@ -1,22 +1,30 @@
-version:      '3'
+version:         '3'
 services:
   sensu:
-    hostname: sensu
-    build:    sensu-server/
-    image:    sensu
-    restart:  unless-stopped
+    hostname:    sensu
+    build:       sensu-server/
+    image:       sensu
+    restart:     unless-stopped
     ports:
       - "3000:3000"
       - "4568:4568"
     networks:
       - front
 
+  sensu-client:
+    hostname:    sensu-c
+    build:       sensu-client/
+    image:       sensu-client
+    restart:     unless-stopped
+    networks:
+      - front
+
 
   redis:
-    hostname: redis
-    image:    redis:latest
-    restart:  unless-stopped
-    command:  redis-server --appendonly yes
+    hostname:    redis
+    image:       redis:latest
+    restart:     unless-stopped
+    command:     redis-server --appendonly yes
     ports:
       - "6379:6379"
     networks:
@@ -24,9 +32,9 @@ services:
 
 
   rabbitmq:
-    image:    rabbitmq
-    hostname: rabbitmq
-    restart:  unless-stopped
+    image:       rabbitmq
+    hostname:    rabbitmq
+    restart:     unless-stopped
     env_file:
       - rabbitmq-server/rabbitmq.env
     ports:
@@ -38,4 +46,4 @@ services:
 
 networks:
   front:
-    driver:   bridge
+    driver:      bridge

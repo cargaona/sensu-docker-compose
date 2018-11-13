@@ -1,0 +1,10 @@
+{
+  "home": {
+    "name":"home",
+    "address":"sensu",
+    "environment": "development",
+    "subscriptions": [
+      "dev"
+    ]
+  }
+}

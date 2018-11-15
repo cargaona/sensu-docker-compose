@@ -4,3 +4,4 @@
     "port": 6379,
     "auto_reconnect": true
   }
+ }
